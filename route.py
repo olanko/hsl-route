@@ -3,10 +3,11 @@ from http.client import HTTPException
 import http.client
 import json
 
-
-
 from flask import Flask
+from flask.ext.cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 
 hslHost = 'api.reittiopas.fi'
 hslRouteUrl = '/hsl/prod/?request=lines&user=olliko&pass=olliko&format=json&epsg_out=4326'
